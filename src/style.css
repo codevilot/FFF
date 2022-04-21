@@ -1,0 +1,25 @@
+/* default condition */
+ul, li{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+h2, h3{
+    margin:0;
+}
+/* set for FFF */
+body{
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+}
+
+.colorpreview{
+    width:100px;
+    height:100px;
+}
+.grayUi{
+display:flex;
+flex-wrap: wrap;
+}
