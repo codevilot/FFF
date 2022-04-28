@@ -1,34 +1,50 @@
 /* default condition */
-ul, li{
+ul,
+li {
     list-style: none;
-    padding:0;
-    margin:0;
-}
-h2, h3{
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
-a{
-    color:#000;
+h2,
+h3 {
+    margin: 0;
+}
+
+a {
+    color: #000;
     text-decoration: none;
 }
+
 /* set for FFF */
-body{
-    max-width:1200px;
-    margin-left:auto;
-    margin-right:auto;
-    display:flex;
+body {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 }
 
-.colorpreview{
-    width:100px;
-    height:100px;
-}
-.grayUi{
-display:flex;
-flex-wrap: wrap;
+.colorpreview {
+    width: 100px;
+    height: 100px;
 }
 
-.section{
-    padding-bottom:100px;
+.grayUi {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    padding-bottom: 100px;
+    padding-left: 50px;
+}
+
+#navi {
+    position: fixed;
+    padding-top: 100px;
+}
+
+#content {
+    margin-left: 200px;
+    padding-top: 100px;
 }
