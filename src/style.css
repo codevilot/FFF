@@ -25,11 +25,11 @@ body {
 }
 
 .colorpreview {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
 
-.grayUi {
+.colorul {
     display: flex;
     flex-wrap: wrap;
 }
@@ -47,4 +47,12 @@ body {
 #content {
     margin-left: 200px;
     padding-top: 100px;
+}
+
+/* common class */
+.verysmall{
+    width: 0;
+    height: 0;
+    border: 0;
+    padding: 0;
 }
