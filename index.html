@@ -1,68 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>For Frontend Favorites</title>
     <script src="./src/app.js" type="module"></script>
-    <link rel="stylesheet" type="text/css" href="./src/style.css">
-</head>
-<body>
- <div id = "navi">
-     <ul>
-         <li herf="#color">
-            Color Palette
-         </li>
-         <li href="#shadow">
-            Shadow Palette
-         </li>
-         <li href="style">
-             Style default
-         </li>
-         <li href="favorite">
-            Recommend Site FF
-         </li>
-     </ul>
- </div>
- <div id = "content">
-     <div class="section" id="color">
+    <link rel="stylesheet" type="text/css" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="navi">
+      <ul>
+        <li herf="#color">Color Palette</li>
+        <li href="#shadow">Shadow Palette</li>
+        <li href="#git">Git Commit Message Convention</li>
+        <li href="style">Style default</li>
+        <li href="favorite">Recommend Site FF</li>
+      </ul>
+    </div>
+    <div id="content">
+      <div class="section" id="color">
         <h2>Color Palette</h2>
-     </div>
-     <div class="section" id="shadow">
-      <h2>Shadow Palette</h2>
-     </div>
-     <div class="section" id="favorite">
-         <div class="svgrepo">
-            <a href="https://www.svgrepo.com/svg/356292/category">
-            <h2>SVG Site - 1</h2>  
-            </a>
-            <h3>
-            preview
-            </h3>
-            <iframe id="inlineFrameExample"
+      </div>
+      <div class="section" id="shadow">
+        <h2>Shadow Palette</h2>
+      </div>
+      <div class="section" id="git">
+        <h2>Git Commit Message Convention</h2>
+        <div class="git__wrap">
+          <fieldset class="type">
+            <legend>Select type :</legend>
+            <div class="feat">
+              <input type="radio" id="feat" name="type" value="feat" />
+              <label for="feat">feat</label>
+            </div>
+            <div class="fix">
+              <input type="radio" id="fix" name="type" value="fix" />
+              <label for="fix">fix</label>
+            </div>
+            <div class="docs">
+              <input type="radio" id="docs" name="type" value="docs" />
+              <label for="docs">docs</label>
+            </div>
+            <div class="style">
+              <input type="radio" id="style" name="type" value="style" />
+              <label for="style">style</label>
+            </div>
+            <div class="refactor">
+              <input type="radio" id="refactor" name="type" value="refactor" />
+              <label for="refactor">refactor</label>
+            </div>
+            <div class="test">
+              <input type="radio" id="test" name="type" value="test" />
+              <label for="test">test</label>
+            </div>
+            <div class="chore">
+              <input type="radio" id="chore" name="type" value="chore" />
+              <label for="chore">chore</label>
+            </div>
+          </fieldset>
+          <fieldset class="subject">
+            <legend>Select Subject :</legend>
+            <div class="fix">
+              <input type="radio" id="fix" name="subject" value="fix" />
+              <label for="fix">fix</label>
+            </div>
+            <div class="add">
+              <input type="radio" id="add" name="subject" value="add" />
+              <label for="add">add</label>
+            </div>
+            <div class="remove">
+              <input type="radio" id="remove" name="subject" value="remove" />
+              <label for="remove">remove</label>
+            </div>
+            <div class="improve">
+              <input type="radio" id="improve" name="subject" value="improve" />
+              <label for="improve">improve</label>
+            </div>
+            <div class="implement">
+              <input
+                type="radio"
+                id="implement"
+                name="subject"
+                value="implement"
+              />
+              <label for="implement">implement</label>
+            </div>
+            <div class="refactor">
+              <input
+                type="radio"
+                id="refactor"
+                name="subject"
+                value="refactor"
+              />
+              <label for="refactor">refactor</label>
+            </div>
+            <div class="move">
+              <input type="radio" id="move" name="subject" value="move" />
+              <label for="move">move</label>
+            </div>
+            <div class="rename">
+              <input type="radio" id="rename" name="subject" value="rename" />
+              <label for="rename">rename</label>
+            </div>
+            <div class="update">
+              <input type="radio" id="update" name="subject" value="update" />
+              <label for="update">update</label>
+            </div>
+          </fieldset>
+          <fieldset class="result__wrap">
+            <legend>Result :</legend>
+            <textarea id="gitRes"></textarea>
+            <button>Copy</button>
+          </fieldset>
+        </div>
+      </div>
+      <div class="section" id="favorite">
+        <div class="svgrepo">
+          <a href="https://www.svgrepo.com/svg/356292/category">
+            <h2>SVG Site - 1</h2>
+          </a>
+          <h3>preview</h3>
+          <iframe
+            id="inlineFrameExample"
             title="Inline Frame Example"
             width="100%"
             height="500"
-            src="https://www.svgrepo.com/svg/356292/category">
-            </iframe>
-         </div>
-         <div class="icomoon">
-            <a href="https://www.icomoon.io">
-            <h2>SVG Site - 2</h2>  
-            </a>
-            <h3>
-            preview
-            </h3>
-            <!-- <iframe id="inlineFrameExample"
+            src="https://www.svgrepo.com/svg/356292/category"
+          >
+          </iframe>
+        </div>
+        <div class="icomoon">
+          <a href="https://www.icomoon.io">
+            <h2>SVG Site - 2</h2>
+          </a>
+          <h3>preview</h3>
+          <!-- <iframe id="inlineFrameExample"
             title="Inline Frame Example"
             width="100%"
             height="500"
             src="https://icomoon.io/#icons">
             </iframe> -->
-         </div>
-
+        </div>
+      </div>
     </div>
- </div>
-</body>
+  </body>
 </html>
