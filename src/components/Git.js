@@ -1,38 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+import Component from "../core/Component.js";
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Frontend Favorites</title>
-  <script src="./src/app.js" type="module"></script>
-  <link rel="stylesheet" type="text/css" href="./src/style.css" />
-</head>
-
-<body>
-  <div id="app"></div>
-</body>
-<!-- <body>
-    <div id="navi">
-      <div class="nav__wrap">
-        <a href="#color">Color Palette</a>
-        <a href="#shadow">Shadow Palette</a>
-        <a href="#git">Git Commit Message Convention</a>
-        <a href="#style">Style default</a>
-        <a href="#favorite">Recommend Site FF</a>
-        <a href="#motive">-Design Motivate</a>
-        <a href="#svg">-SVG Site</a>
-      </div>
-    </div>
-    <div id="content">
-      <div class="section" id="color">
-        <h2>Color Palette</h2>
-      </div>
-      <div class="section" id="shadow">
-        <h2>Shadow Palette</h2>
-      </div>
-      <div class="section" id="git">
+export default class Git extends Component {
+    setup() {
+        this.$state = { items: ['item1', 'item2'] };
+    }
+    template() {
+        const { items } = this.$state;
+        return `
+        <div class="section" id="git">
         <h2>Git Commit Message Convention</h2>
         <div class="git__wrap">
           <fieldset class="type">
@@ -140,46 +115,24 @@
           </fieldset>
         </div>
       </div>
-      <div class="section" id="favorite">
-        <div id="motive">
-          <div class="svgrepo" id="svg">
-            <a href="https://www.behance.net/">
-              <h2>Behance</h2>
-            </a>
-            <h3>preview</h3>
-            <iframe
-              id="inlineFrameExample"
-              title="Inline Frame Example"
-              width="100%"
-              height="500"
-              src="https://www.behance.net/"
-            >
-            </iframe>
-          </div>
-        </div>
-        <div class="svgrepo" id="svg">
-          <a href="https://www.svgrepo.com/svg/356292/category">
-            <h2>SVG Site - 1</h2>
-          </a>
-          <h3>preview</h3>
-          <iframe
-            id="inlineFrameExample"
-            title="Inline Frame Example"
-            width="100%"
-            height="500"
-            src="https://www.svgrepo.com/svg/356292/category"
-          >
-          </iframe>
-        </div>
-        <div class="icomoon">
-          <a href="https://www.icomoon.io">
-            <h2>SVG Site - 2</h2>
-          </a>
-          <h3>preview</h3>
+    `
+    }
 
-        </div>
-      </div>
-    </div>
-  </body> -->
-
-</html>
+    setEvent() {
+        const fieldset = this.$target.querySelector(".git__wrap");
+        // const type = document.querySelector(".type");
+        // const subject = document.querySelector(".subject");
+        const gitObj = new Map();
+        fieldset.addEventListener("click", (e) => {
+            if (e.target.id.length !== 0) {
+                const idE = e.target.id;
+                const nameE = e.target.name;
+                gitObj.set(nameE, idE);
+                let result = document.querySelector("#gitRes");
+                if (gitObj.size === 2) {
+                    result.innerHTML = `${gitObj.get("type")}:${gitObj.get("subject")} `;
+                }
+            }
+        });
+    }
+}

@@ -15,18 +15,21 @@ a {
   color: #000;
   text-decoration: none;
 }
+
 /* var style */
 :root {
   --var-a-res-height: 100px;
   --var-desc-font-size: 11px;
   --var-desc-font-color: grey;
 }
+
 /* set for FFF */
 body {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  justify-content: center;
 }
 
 .colorpreview {
@@ -62,19 +65,23 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .verysmall {
   width: 0;
   height: 0;
   border: 0;
   padding: 1px;
 }
+
 .git__wrap {
   display: flex;
   flex-direction: row;
 }
+
 .section {
   padding-top: var(--var-a-res-height);
 }
+
 .type-desc,
 .title-desc {
   font-size: var(--var-desc-font-size);
