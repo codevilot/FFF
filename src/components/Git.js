@@ -1,13 +1,13 @@
 import Component from "../core/Component.js";
 
 export default class Git extends Component {
-    setup() {
-        this.$state = { items: ['item1', 'item2'] };
-    }
-    template() {
-        const { items } = this.$state;
-        return `
-        <div class="section" id="git">
+  setup() {
+    // this.$state = { items: ["item1", "item2"] };
+  }
+  template() {
+    // const { items } = this.$state;
+    return `
+
         <h2>Git Commit Message Convention</h2>
         <div class="git__wrap">
           <fieldset class="type">
@@ -114,25 +114,24 @@ export default class Git extends Component {
             <button>Copy</button>
           </fieldset>
         </div>
-      </div>
-    `
-    }
+    `;
+  }
 
-    setEvent() {
-        const fieldset = this.$target.querySelector(".git__wrap");
-        // const type = document.querySelector(".type");
-        // const subject = document.querySelector(".subject");
-        const gitObj = new Map();
-        fieldset.addEventListener("click", (e) => {
-            if (e.target.id.length !== 0) {
-                const idE = e.target.id;
-                const nameE = e.target.name;
-                gitObj.set(nameE, idE);
-                let result = document.querySelector("#gitRes");
-                if (gitObj.size === 2) {
-                    result.innerHTML = `${gitObj.get("type")}:${gitObj.get("subject")} `;
-                }
-            }
-        });
-    }
+  setEvent() {
+    const fieldset = this.$target.querySelector(".git__wrap");
+    // const type = document.querySelector(".type");
+    // const subject = document.querySelector(".subject");
+    const gitObj = new Map();
+    fieldset.addEventListener("click", (e) => {
+      if (e.target.id.length !== 0) {
+        const idE = e.target.id;
+        const nameE = e.target.name;
+        gitObj.set(nameE, idE);
+        let result = document.querySelector("#gitRes");
+        if (gitObj.size === 2) {
+          result.innerHTML = `${gitObj.get("type")}:${gitObj.get("subject")} `;
+        }
+      }
+    });
+  }
 }

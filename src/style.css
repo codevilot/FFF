@@ -30,6 +30,7 @@ body {
   margin-right: auto;
   display: flex;
   justify-content: center;
+  background-color: #f8f8f8;
 }
 
 .colorpreview {
@@ -46,26 +47,30 @@ body {
   font-size: 14px;
 }
 
-/* .section {
-  padding-bottom: 100px;
-  padding-left: 50px;
-} */
-
-#navi {
-  position: fixed;
-  padding-top: 100px;
+#app {
+  display: flex;
+  padding-top: 150px;
 }
-
-#content {
-  margin-left: 300px;
-}
-
 /* common class */
-.nav__wrap {
+.Nav {
   display: flex;
   flex-direction: column;
+  margin-right: 50px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
+.Nav h2 {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.Git {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .verysmall {
   width: 0;
   height: 0;
@@ -76,10 +81,6 @@ body {
 .git__wrap {
   display: flex;
   flex-direction: row;
-}
-
-.section {
-  padding-top: var(--var-a-res-height);
 }
 
 .type-desc,

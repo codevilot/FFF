@@ -1,4 +1,6 @@
-import Git from "./components/Git.js"
+import { createSelector } from "./core/function.js";
+import Git from "./components/Git.js";
+import Nav from "./core/Nav.js";
 
 // fetch("./src/color.json")
 //   .then(function (res) {
@@ -60,8 +62,14 @@ import Git from "./components/Git.js"
 // });
 class App {
   constructor() {
-    const $app = document.querySelector('#app');
-    new Git($app);
+    const $app = document.querySelector("#app");
+    const $Nav = createSelector("div", $app, "Nav");
+    const $content = createSelector("div", $app, "Git");
+
+    new Nav($Nav);
+    new Git($content);
+
+    // new Nav($app);
   }
 }
 
