@@ -1,7 +1,7 @@
 import { createSelector } from "./core/function.js";
 import Git from "./components/Git.js";
 import Nav from "./core/Nav.js";
-
+import Component from "./core/Component.js";
 // fetch("./src/color.json")
 //   .then(function (res) {
 //     return res.json();
@@ -60,7 +60,7 @@ import Nav from "./core/Nav.js";
 //     }
 //   }
 // });
-class App {
+export default class App {
   constructor() {
     const $app = document.querySelector("#app");
     const $Nav = createSelector("div", $app, "Nav");
@@ -69,8 +69,6 @@ class App {
     new Nav($Nav);
     new Git($content);
 
-    // new Nav($app);
   }
 }
 
-new App();
