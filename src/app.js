@@ -2,6 +2,7 @@ import { createSelector } from "./core/function.js";
 import Git from "./components/Git.js";
 import Nav from "./core/Nav.js";
 import Component from "./core/Component.js";
+import Shadow from "./components/Shadow.js";
 // fetch("./src/color.json")
 //   .then(function (res) {
 //     return res.json();
@@ -60,15 +61,26 @@ import Component from "./core/Component.js";
 //     }
 //   }
 // });
-export default class App {
-  constructor() {
-    const $app = document.querySelector("#app");
-    const $Nav = createSelector("div", $app, "Nav");
-    const $content = createSelector("div", $app, "Git");
+export default class App extends Component {
+  setup() {}
+  template() {
+    return `
 
+    `;
+  }
+  setEvent() {
+    const $Nav = createSelector("div", this.$target, "Nav");
+    const $content = createSelector("div", this.$target, "Git");
     new Nav($Nav);
     new Git($content);
 
+    this.$target.addEventListener("click", (e) => {
+      if (e.target.parentElement.classList[0] === "Nav") {
+        const className = e.target.classList[0];
+        this.$target.querySelector(".pageList").innerHTML = className;
+        if (className === "git") return new Git($content);
+        if (className === "shadow") return new Shadow($content);
+      }
+    });
   }
 }
-

@@ -1,19 +1,21 @@
 import Component from "../core/Component.js";
 
 export default class Nav extends Component {
-  setup() {}
+  setup() {
+    this.$state = {
+      category: "git",
+    };
+  }
   template() {
     return `
-    <h2>Page List</h2>
-    <a href="#color">Color Palette</a>
-    <a href="#shadow">Shadow Palette</a>
-    <a href="#git">Git Commit Message Convention</a>
-    <a href="#style">Style default</a>
-    <a href="#favorite">Recommend Site FF</a>
-    <a href="#motive">-Design Motivate</a>
-    <a href="#svg">-SVG Site</a>
+    <h2 class="pageList">Page List</h2>
+    <a class="color">Color Palette</a>
+    <a class="shadow">Shadow Palette</a>
+    <a class="git">Git Commit Message Convention</a>
+    <a class="style">Style default</a>
+    <a class="favorite">Recommend Site FF</a>
+    <a class="motive">-Design Motivate</a>
+    <a class="svg">-SVG Site</a>
     `;
   }
-
-  setEvent() {}
 }
