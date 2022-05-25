@@ -62,7 +62,7 @@ import Shadow from "./components/Shadow.js";
 //   }
 // });
 export default class App extends Component {
-  setup() {}
+  setup() { }
   template() {
     return `
 
@@ -73,9 +73,8 @@ export default class App extends Component {
     const $content = createSelector("div", this.$target, "Git");
     new Nav($Nav);
     new Git($content);
-
     this.$target.addEventListener("click", (e) => {
-      if (e.target.parentElement.classList[0] === "Nav") {
+      if (e.target.parentElement.classList[0] === "nav__list") {
         const className = e.target.classList[0];
         this.$target.querySelector(".pageList").innerHTML = className;
         if (className === "git") return new Git($content);

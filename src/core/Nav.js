@@ -9,9 +9,10 @@ export default class Nav extends Component {
   template() {
     return `
     <h2 class="pageList">Page List</h2>
-    <a class="shadow">Shadow Palette</a>
-    <a class="git">Git Commit Message Convention</a>
-
+    <div class="nav__list">
+    <a class="git">Git Commit Convention</a>
+    <a class="shadow">Shadow</a>
+    </div>
     `;
   }
 }

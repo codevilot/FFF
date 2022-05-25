@@ -55,7 +55,7 @@ body {
 .Nav {
   display: flex;
   flex-direction: column;
-  margin-right: 50px;
+  margin-right: 20px;
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
