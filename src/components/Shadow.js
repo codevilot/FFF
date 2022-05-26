@@ -1,5 +1,5 @@
 import Component from "../core/Component.js";
-
+import {clickToCopy} from "../core/Function.js"
 export default class Git extends Component {
   setup() {
     // this.$state = { items: ["item1", "item2"] };
@@ -31,6 +31,12 @@ export default class Git extends Component {
           li.style = shadow[s]
         }
       })
+
+      const shadowWrap = document.querySelector(".shadow__wrap")
+      shadowWrap.addEventListener("click", (e) => {
+        const shadowValue = window.getComputedStyle(e.target).getPropertyValue("box-shadow")
+        clickToCopy(`box-shadow:${shadowValue}`)
+      });
     //   .then(function (data) {
     //     const color = data.color;
     //     const $section = document.querySelector("#color");

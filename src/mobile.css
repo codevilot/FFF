@@ -10,7 +10,9 @@
     padding: 10px;
     border-radius: 0px;
 }
-
+.Nav .nav__list{
+    flex-direction: row;
+}
 .Nav .nav__list a:after {
     content: "|";
     padding-left: 10px;
