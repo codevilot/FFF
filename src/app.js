@@ -1,8 +1,9 @@
-import { createSelector } from "./core/function.js";
+import { createSelector } from "./core/Function.js";
 import Git from "./components/Git.js";
 import Nav from "./core/Nav.js";
 import Component from "./core/Component.js";
 import Shadow from "./components/Shadow.js";
+import Font from "./components/Font.js"
 // fetch("./src/color.json")
 //   .then(function (res) {
 //     return res.json();
@@ -79,6 +80,7 @@ export default class App extends Component {
         this.$target.querySelector(".pageList").innerHTML = className;
         if (className === "git") return new Git($content);
         if (className === "shadow") return new Shadow($content);
+        if (className === "font") return new Font($content);
       }
     });
   }

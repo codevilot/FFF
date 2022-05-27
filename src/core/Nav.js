@@ -12,6 +12,7 @@ export default class Nav extends Component {
     <div class="nav__list">
     <a class="git">Git Commit Convention</a>
     <a class="shadow">Shadow</a>
+    <a class="font">Font</a>
     </div>
     `;
   }
