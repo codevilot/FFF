@@ -1,8 +1,8 @@
 {
     "font": {
-        "Tium": "@font-face {font-family: 'Tium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/Tium.woff2') format('woff2');}",
-        "ParkYongJun": "@font-face {font-family: 'ParkYongJun';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/ParkYongJun.woff2') format('woff2');}",
-        "NelnaLizzyChae ": "@font-face {font-family: 'NelnaLizzyChae';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/NelnaLizzyChae.woff2') format('woff2');}",
-        "afe24Ohsquareair": "@font-face {font-family: 'Cafe24Ohsquareair';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/Cafe24Ohsquareair.woff') format('woff');}"
+        "티몬 티움체": "@font-face {font-family: 'Tium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/Tium.woff2') format('woff2');}",
+        "박용준투사회보체": "@font-face {font-family: 'ParkYongJun';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/ParkYongJun.woff2') format('woff2');}",
+        "낼라 리지체": "@font-face {font-family: 'NelnaLizzyChae';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/NelnaLizzyChae.woff2') format('woff2');}",
+        "카페24 아네모네 에어체": "@font-face {font-family: 'Cafe24Ohsquareair';src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/Cafe24Ohsquareair.woff') format('woff');}"
     }
 }
