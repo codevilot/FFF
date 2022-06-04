@@ -30,10 +30,9 @@ export default class Font extends Component {
                     const li = createSelector("li", $wrap, "font__div")
                     const h3 = createSelector("h3", li, "font__sample")
                     const textarea = createSelector("textarea", $wrap, "font__test")
-                    h3.style.fontFamily = font[s]
-                    h3.innerHTML = `${s}`
-                    fontList += font[s]
-                    console.log(font[s])
+                    h3.style.fontFamily = `"${s}"`
+                    h3.innerHTML = `${font[s].name}`
+                    fontList += font[s].url
                 }
                 style.innerHTML = fontList
             })
