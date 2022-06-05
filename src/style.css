@@ -21,7 +21,7 @@ a {
   --var-a-res-height: 100px;
   --var-desc-font-size: 11px;
   --var-desc-font-color: grey;
-  --var--fade-out-time:0.7s;
+  --var--fade-out-time: 0.7s;
 }
 
 /* set for FFF */
@@ -54,7 +54,7 @@ body {
 
 /* common class */
 .Nav {
- 
+
   margin-right: 20px;
   background-color: #fff;
   padding: 30px;
@@ -66,10 +66,12 @@ body {
   margin-bottom: 10px;
   border-bottom: 1px solid #d8d8d8;
 }
-.Nav .nav__list{
+
+.Nav .nav__list {
   display: flex;
- flex-direction: column;   
+  flex-direction: column;
 }
+
 .Git {
   width: 900px;
   background-color: #fff;
@@ -98,10 +100,10 @@ body {
 }
 
 
-.alertCopy{
-  position:fixed;
-  top:50%;
-  left:50%;
+.alertCopy {
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
   border: 1px solid grey;
@@ -112,14 +114,17 @@ body {
   -o-animation: fadeOut var(--var--fade-out-time) 1 linear alternate;
   animation: fadeOut var(--var--fade-out-time) 1 linear alternate;
 }
+
 @keyframes fadeOut {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
 }
+
 .verysmall {
   width: 0;
   height: 0;
@@ -136,4 +141,36 @@ body {
 .title-desc {
   font-size: var(--var-desc-font-size);
   color: var(--var-desc-font-color);
+}
+
+.font__wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.font__name {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.font__div {
+  margin-bottom: 10px;
+  width: 33%;
+}
+
+.font__div textarea {
+  padding: 10px;
+  width: 90%;
+  height: 200px;
+  border: none;
+  resize: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.font__div button {
+  margin-left: 10px;
+  background: black;
+  color: white;
+  border-radius: 25px;
 }
