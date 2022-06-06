@@ -1,5 +1,5 @@
 import Component from "../core/Component.js";
-import { createSelector } from "../core/Function.js";
+import { createSelector, clickToCopy } from "../core/Function.js";
 export default class Font extends Component {
     setup() {
         // this.$state = { items: ["item1", "item2"] };
@@ -45,8 +45,11 @@ export default class Font extends Component {
 
         const fontWrap = document.querySelector(".font__wrap")
         fontWrap.addEventListener("click", (e) => {
-            const fontValue = window.getComputedStyle(e.target).getPropertyValue("box-font")
-            clickToCopy(`box-shadow:${shadowValue}`)
+            if (e.target.classList[0] === "font__copy") {
+                console.log(e.target.classList[0])
+                const fontValue = window.getComputedStyle(e.target.parentElement.querySelector(".font__sample")).getPropertyValue("font-family")
+                clickToCopy(`font-family:${fontValue}`)
+            }
         });
     }
 }
