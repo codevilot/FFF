@@ -54,7 +54,6 @@ body {
 
 /* common class */
 .Nav {
-
   margin-right: 20px;
   background-color: #fff;
   padding: 30px;
@@ -83,7 +82,24 @@ body {
 .Git h2 {
   padding-bottom: 30px;
 }
-
+.git__wrap > fieldset.result__wrap > legend {
+  margin-bottom: 10px;
+}
+#gitRes {
+  border: 0;
+  resize: none;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+}
+.git__copy {
+  margin-left: 10px;
+  margin-right: 10px;
+  background: black;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  border-radius: 100px;
+}
 .shadow__wrap {
   display: grid;
   place-items: center;
@@ -98,7 +114,6 @@ body {
   place-content: center;
   margin-bottom: 100px;
 }
-
 
 .alertCopy {
   position: fixed;
@@ -165,7 +180,6 @@ body {
   border: none;
   resize: none;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 }
 
 .font__div button {

@@ -1,5 +1,5 @@
 import Component from "../core/Component.js";
-
+import { alertCopy } from "../core/Function.js";
 export default class Git extends Component {
   setup() {
     // this.$state = { items: ["item1", "item2"] };
@@ -48,90 +48,37 @@ export default class Git extends Component {
               <span class="type-desc">빌드 업무 수정</span>
             </div>
           </fieldset>
-          <fieldset class="subject">
-            <legend>Select Subject :</legend>
-            <div class="fix">
-              <input type="radio" id="fix" name="subject" value="fix" />
-              <label for="fix">fix</label>
-              <span class="title-desc">오작동 수정</span>
-            </div>
-            <div class="add">
-              <input type="radio" id="add" name="subject" value="add" />
-              <label for="add">add</label>
-              <span class="title-desc">코드, 테스트, 예제, 문서 추가</span>
-            </div>
-            <div class="remove">
-              <input type="radio" id="remove" name="subject" value="remove" />
-              <label for="remove">remove</label>
-              <span class="title-desc">코드의 삭제</span>
-            </div>
-            <div class="improve">
-              <input type="radio" id="improve" name="subject" value="improve" />
-              <label for="improve">improve</label>
-              <span class="title-desc"
-                >호환성, 성능, 검증 기능, 접근성 향상</span
-              >
-            </div>
-            <div class="implement">
-              <input
-                type="radio"
-                id="implement"
-                name="subject"
-                value="implement"
-              />
-              <label for="implement">implement</label>
-              <span class="title-desc">코드가 이전보다 구현체 완성</span>
-            </div>
-            <div class="refactor">
-              <input
-                type="radio"
-                id="refactor"
-                name="subject"
-                value="refactor"
-              />
-              <label for="refactor">refactor</label>
-              <span class="title-desc">코드 전면 수정</span>
-            </div>
-            <div class="move">
-              <input type="radio" id="move" name="subject" value="move" />
-              <label for="move">move</label>
-              <span class="title-desc">코드의 이동</span>
-            </div>
-            <div class="rename">
-              <input type="radio" id="rename" name="subject" value="rename" />
-              <label for="rename">rename</label>
-              <span class="title-desc">이름 변경</span>
-            </div>
-            <div class="update">
-              <input type="radio" id="update" name="subject" value="update" />
-              <label for="update">update</label>
-              <span class="title-desc">개정이나 업데이트</span>
-            </div>
-          </fieldset>
+          
           <fieldset class="result__wrap">
-            <legend>Result :</legend>
+            <legend>Result :<span class="git__copy">copy</span></legend>
             <textarea id="gitRes"></textarea>
-            <button>Copy</button>
           </fieldset>
         </div>
     `;
   }
 
   setEvent() {
-    const fieldset = this.$target.querySelector(".git__wrap");
-    // const type = document.querySelector(".type");
-    // const subject = document.querySelector(".subject");
+    const type = this.$target.querySelector(".type");
     const gitObj = new Map();
-    fieldset.addEventListener("click", (e) => {
-      if (e.target.id.length !== 0) {
+    const copy = this.$target.querySelector(".git__copy");
+    type.addEventListener("click", (e) => {
+      if (
+        e.target.id.length !== 0 &&
+        e.target.parentElement.parentElement.classList[0] === "type"
+      ) {
         const idE = e.target.id;
         const nameE = e.target.name;
         gitObj.set(nameE, idE);
         let result = document.querySelector("#gitRes");
-        if (gitObj.size === 2) {
-          result.innerHTML = `${gitObj.get("type")}:${gitObj.get("subject")} `;
-        }
+        result.innerHTML = `${gitObj.get("type")}:`;
       }
+    });
+    copy.addEventListener("click", (e) => {
+      const value =
+        e.target.parentElement.parentElement.querySelector("#gitRes");
+      value.select();
+      document.execCommand("copy");
+      alertCopy();
     });
   }
 }
