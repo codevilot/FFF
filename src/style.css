@@ -72,7 +72,7 @@ body {
 }
 
 .Git {
-  width: 900px;
+  width: 600px;
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
@@ -85,7 +85,15 @@ body {
 .git__wrap > fieldset.result__wrap > legend {
   margin-bottom: 10px;
 }
+.git__wrap > fieldset {
+  width: 50%;
+}
+.git__wrap .result__wrap {
+  border: none;
+}
 #gitRes {
+  height: 100%;
+  width: 100%;
   border: 0;
   resize: none;
   box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
@@ -164,17 +172,24 @@ body {
 }
 
 .font__name {
+  margin-left: 5%;
   display: flex;
   margin-bottom: 10px;
 }
-
+.font__name h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .font__div {
   margin-bottom: 10px;
   width: 33%;
 }
 
 .font__div textarea {
+  box-sizing: border-box;
   padding: 10px;
+  margin: 5%;
   width: 90%;
   height: 200px;
   border: none;
