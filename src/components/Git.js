@@ -42,13 +42,72 @@ export default class Git extends Component {
               <label for="test">test</label>
               <span class="type-desc">테스트 코드 추가</span>
             </div>
-            <div class="chore">
-              <input type="radio" id="chore" name="type" value="chore" />
-              <label for="chore">chore</label>
+            <div class="build">
+              <input type="radio" id="build" name="type" value="build" />
+              <label for="build">build</label>
               <span class="type-desc">빌드 업무 수정</span>
             </div>
+            <div class="conf">
+              <input type="radio" id="conf" name="type" value="conf" />
+              <label for="conf">conf</label>
+              <span class="type-desc">초기 설정</span>
+            </div>
           </fieldset>
-          
+          <fieldset class="subject">
+          <legend>Select Subject :</legend>
+          <div class="add">
+            <input type="radio" id="add" name="subject" value="add" />
+            <label for="add">add</label>
+            <span class="title-desc">코드, 테스트, 예제, 문서 추가</span>
+          </div>
+          <div class="remove">
+            <input type="radio" id="remove" name="subject" value="remove" />
+            <label for="remove">remove</label>
+            <span class="title-desc">코드의 삭제</span>
+          </div>
+          <div class="improve">
+            <input type="radio" id="improve" name="subject" value="improve" />
+            <label for="improve">improve</label>
+            <span class="title-desc"
+              >호환성, 성능, 검증 기능, 접근성 향상</span
+            >
+          </div>
+          <div class="implement">
+            <input
+              type="radio"
+              id="implement"
+              name="subject"
+              value="implement"
+            />
+            <label for="implement">implement</label>
+            <span class="title-desc">코드가 이전보다 구현체 완성</span>
+          </div>
+          <div class="refactor">
+            <input
+              type="radio"
+              id="refactor"
+              name="subject"
+              value="refactor"
+            />
+            <label for="refactor">refactor</label>
+            <span class="title-desc">코드 전면 수정</span>
+          </div>
+          <div class="move">
+            <input type="radio" id="move" name="subject" value="move" />
+            <label for="move">move</label>
+            <span class="title-desc">코드의 이동</span>
+          </div>
+          <div class="rename">
+            <input type="radio" id="rename" name="subject" value="rename" />
+            <label for="rename">rename</label>
+            <span class="title-desc">이름 변경</span>
+          </div>
+          <div class="update">
+            <input type="radio" id="update" name="subject" value="update" />
+            <label for="update">update</label>
+            <span class="title-desc">개정이나 업데이트</span>
+          </div>
+        </fieldset>
           <fieldset class="result__wrap">
             <legend>Result :<span class="git__copy">copy</span></legend>
             <textarea id="gitRes"></textarea>
@@ -58,19 +117,18 @@ export default class Git extends Component {
   }
 
   setEvent() {
-    const type = this.$target.querySelector(".type");
+    const fieldset = this.$target.querySelector(".git__wrap");
     const gitObj = new Map();
     const copy = this.$target.querySelector(".git__copy");
-    type.addEventListener("click", (e) => {
-      if (
-        e.target.id.length !== 0 &&
-        e.target.parentElement.parentElement.classList[0] === "type"
-      ) {
+    fieldset.addEventListener("click", (e) => {
+      if (e.target.id.length !== 0) {
         const idE = e.target.id;
         const nameE = e.target.name;
         gitObj.set(nameE, idE);
         let result = document.querySelector("#gitRes");
-        result.innerHTML = `${gitObj.get("type")}:`;
+        if (gitObj.size === 2) {
+          result.innerHTML = `${gitObj.get("type")}:${gitObj.get("subject")} `;
+        }
       }
     });
     copy.addEventListener("click", (e) => {
