@@ -53,26 +53,31 @@ body {
 }
 
 /* common class */
-.Nav {
-  margin-right: 20px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
 .Nav h2 {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #d8d8d8;
+  display: none;
 }
 
+.Nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  border-radius: 0px;
+}
 .Nav .nav__list {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+.Nav .nav__list a:after {
+  content: "|";
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
+.Nav .nav__list a:last-child:after {
+  content: "";
+}
 .Git {
-  width: 600px;
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
@@ -85,9 +90,9 @@ body {
 .git__wrap > fieldset.result__wrap > legend {
   margin-bottom: 10px;
 }
-.git__wrap > fieldset {
-  width: 50%;
-}
+/* .git__wrap > .type {
+  width: 37%;
+} */
 .git__wrap .result__wrap {
   border: none;
 }
@@ -157,13 +162,14 @@ body {
 
 .git__wrap {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
 }
 
 .type-desc,
 .title-desc {
   font-size: var(--var-desc-font-size);
   color: var(--var-desc-font-color);
+  white-space: nowrap;
 }
 
 .font__wrap {
